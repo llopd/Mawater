@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专属礼物</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 开场动画 -->
+    <div class="intro" id="intro">
+        <div class="intro-content">
+            <h1>亲爱的朋友</h1>
+            <p>这是一份特别的礼物</p>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="container" id="container" style="display: none;">
+        <!-- 照片展示区 -->
+        <section class="photo-section">
+            <h2>珍贵的回忆</h2>
+            <div class="photo-container">
+                <div class="photo-slider" id="photoSlider">
+                    <div class="photo-slide active">
+                        <img src="https://via.placeholder.com/600x400?text=美好时光1" alt="美好时光1">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="https://via.placeholder.com/600x400?text=美好时光2" alt="美好时光2">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="https://via.placeholder.com/600x400?text=美好时光3" alt="美好时光3">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="https://via.placeholder.com/600x400?text=美好时光4" alt="美好时光4">
+                    </div>
+                </div>
+                <div class="photo-controls">
+                    <button class="prev-btn" id="prevBtn">‹</button>
+                    <button class="next-btn" id="nextBtn">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文字信息区 -->
+        <section class="message-section">
+            <div class="message-card">
+                <h3>致我亲爱的朋友</h3>
+                <p class="message-text">
+                    时光荏苒，友谊长存。
+                    感谢你出现在我的生命里，
+                    带给我那么多快乐和温暖。
+                    愿我们的友谊像星星一样，
+                    永远闪亮，永不褪色。
+                </p>
+                <div class="signature">你的好朋友</div>
+            </div>
+        </section>
+
+        <!-- 互动区域 -->
+        <section class="interactive-section">
+            <div class="surprise-box" id="surpriseBox">
+                <div class="box-lid"></div>
+                <div class="box-body">
+                    <div class="box-content">
+                        <h4>点击打开惊喜</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
