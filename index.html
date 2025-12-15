@@ -5,47 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>专属礼物</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- 开场动画 -->
     <div class="intro" id="intro">
         <div class="intro-content">
-            <h1>亲爱的朋友</h1>
-            <p>这是一份特别的礼物</p>
+            <h1>亲爱的水总</h1>
         </div>
     </div>
 
     <!-- 主要内容 -->
     <div class="container" id="container" style="display: none;">
-        <!-- 照片展示区 -->
-        <section class="photo-section">
-            <h2>珍贵的回忆</h2>
-            <div class="photo-container">
-                <div class="photo-slider" id="photoSlider">
-                    <div class="photo-slide active">
-                        <img src="https://via.placeholder.com/600x400?text=美好时光1" alt="美好时光1">
-                    </div>
-                    <div class="photo-slide">
-                        <img src="https://via.placeholder.com/600x400?text=美好时光2" alt="美好时光2">
-                    </div>
-                    <div class="photo-slide">
-                        <img src="https://via.placeholder.com/600x400?text=美好时光3" alt="美好时光3">
-                    </div>
-                    <div class="photo-slide">
-                        <img src="https://via.placeholder.com/600x400?text=美好时光4" alt="美好时光4">
-                    </div>
+
+        <!-- 圣诞树 -->
+        <section class="interactive-section">
+            <div class="christmas-tree-container">
+                <div class="christmas-tree">
+                    <div class="tree-top"></div>
+                    <div class="tree-middle"></div>
+                    <div class="tree-bottom"></div>
+                    <div class="tree-trunk"></div>
+                    <!-- 树顶星星 -->
+                    <div class="tree-star"></div>
+                    <!-- 装饰球 -->
+                    <div class="ornament ornament-1"></div>
+                    <div class="ornament ornament-2"></div>
+                    <div class="ornament ornament-3"></div>
+                    <div class="ornament ornament-4"></div>
+                    <div class="ornament ornament-5"></div>
+                    <div class="ornament ornament-6"></div>
+                    <div class="ornament ornament-7"></div>
+                    <div class="ornament ornament-8"></div>
+                    <div class="ornament ornament-9"></div>
                 </div>
-                <div class="photo-controls">
-                    <button class="prev-btn" id="prevBtn">‹</button>
-                    <button class="next-btn" id="nextBtn">›</button>
-                </div>
+                <!-- 点我文字 -->
+                <div class="christmas-tree-text" id="treeClickText">点我</div>
             </div>
         </section>
 
         <!-- 文字信息区 -->
         <section class="message-section">
             <div class="message-card">
-                <h3>致我亲爱的朋友</h3>
+                <h3>致我亲爱的水总</h3>
                 <p class="message-text">
                     时光荏苒，友谊长存。
                     感谢你出现在我的生命里，
@@ -53,7 +55,7 @@
                     愿我们的友谊像星星一样，
                     永远闪亮，永不褪色。
                 </p>
-                <div class="signature">你的好朋友</div>
+                <div class="signature"></div>
             </div>
         </section>
 
@@ -65,6 +67,24 @@
                     <div class="box-content">
                         <h4>点击打开惊喜</h4>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聊天机器人区域 -->
+        <section class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>白开水</h3>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="bot-message">
+                        <p>你好！我是白开水，很高兴为你服务！😊</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="输入消息..." autocomplete="off">
+                    <button id="sendBtn">发送</button>
                 </div>
             </div>
         </section>

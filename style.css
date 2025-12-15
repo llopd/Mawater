@@ -92,106 +92,7 @@ body::before {
     to { opacity: 1; }
 }
 
-/* 照片展示区 */
-.photo-section {
-    text-align: center;
-    margin-bottom: 60px;
-}
 
-.photo-section h2 {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.photo-container {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-/* 照片容器发光效果 */
-.photo-container::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-    border-radius: 25px;
-    z-index: -1;
-    animation: glow 3s ease-in-out infinite;
-}
-
-@keyframes glow {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-}
-
-.photo-slider {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.photo-slide {
-    min-width: 100%;
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.photo-slide.active {
-    opacity: 1;
-}
-
-.photo-slide img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.photo-slide.active img {
-    transform: scale(1.05);
-}
-
-.photo-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 10px;
-}
-
-.prev-btn, .next-btn {
-    background: rgba(255, 255, 255, 0.8);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.prev-btn:hover, .next-btn:hover {
-    background: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
 
 /* 文字信息区 */
 .message-section {
@@ -303,6 +204,119 @@ body::before {
     transform: translateY(-100px) rotateX(100deg);
 }
 
+/* 聊天机器人区域 */
+.chat-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* 滚动条样式 */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.5);
+    border-radius: 4px;
+}
+
+.bot-message, .user-message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease;
+}
+
+.bot-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.chat-input button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chat-input button:active {
+    transform: translateY(0);
+}
+
 /* 星星效果 */
 .star {
     position: absolute;
@@ -346,17 +360,7 @@ body::before {
         padding: 10px;
     }
     
-    .photo-section h2 {
-        font-size: 2rem;
-    }
-    
-    .photo-container {
-        max-width: 100%;
-    }
-    
-    .photo-slide img {
-        height: 300px;
-    }
+
     
     .message-card {
         padding: 20px;
@@ -393,9 +397,7 @@ body::before {
         font-size: 1.5rem;
     }
     
-    .photo-slide img {
-        height: 250px;
-    }
+
     
     .message-card {
         padding: 15px;
@@ -413,4 +415,308 @@ body::before {
     .box-body {
         height: 170px;
     }
+}
+
+/* 圣诞树样式 */
+.christmas-tree-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.christmas-tree {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+/* 树的主体部分 */
+.tree-top,
+.tree-middle,
+.tree-bottom {
+    position: absolute;
+    background: linear-gradient(135deg, #2d5016 0%, #4f7928 100%);
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: sway 3s ease-in-out infinite;
+}
+
+.tree-top {
+    width: 120px;
+    height: 120px;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-middle {
+    width: 200px;
+    height: 150px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-bottom {
+    width: 280px;
+    height: 180px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 树干 */
+.tree-trunk {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 树顶星星 */
+.tree-star {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: twinkle 2s ease-in-out infinite, rotateStar 10s linear infinite;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+/* 装饰球 */
+.ornament {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    animation: twinkle 1.5s ease-in-out infinite alternate;
+}
+
+/* 不同颜色的装饰球 */
+.ornament-1 {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    top: 50px;
+    left: 120px;
+    animation-delay: 0s;
+}
+
+.ornament-2 {
+    background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+    top: 80px;
+    left: 200px;
+    animation-delay: 0.2s;
+}
+
+.ornament-3 {
+    background: linear-gradient(135deg, #00BFFF 0%, #1E90FF 100%);
+    top: 120px;
+    left: 100px;
+    animation-delay: 0.4s;
+}
+
+.ornament-4 {
+    background: linear-gradient(135deg, #FFFF00 0%, #FFD700 100%);
+    top: 140px;
+    left: 220px;
+    animation-delay: 0.6s;
+}
+
+.ornament-5 {
+    background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+    top: 180px;
+    left: 140px;
+    animation-delay: 0.8s;
+}
+
+.ornament-6 {
+    background: linear-gradient(135deg, #9400D3 0%, #800080 100%);
+    top: 200px;
+    left: 200px;
+    animation-delay: 1s;
+}
+
+.ornament-7 {
+    background: linear-gradient(135deg, #00FF00 0%, #008000 100%);
+    top: 240px;
+    left: 120px;
+    animation-delay: 1.2s;
+}
+
+.ornament-8 {
+    background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+    top: 260px;
+    left: 220px;
+    animation-delay: 1.4s;
+}
+
+.ornament-9 {
+    background: linear-gradient(135deg, #00BFFF 0%, #1E90FF 100%);
+    top: 300px;
+    left: 160px;
+    animation-delay: 1.6s;
+}
+
+/* 树的摇摆动画 */
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(2deg);
+    }
+}
+
+/* 星星旋转动画 */
+@keyframes rotateStar {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+/* 装饰球闪烁动画 */
+@keyframes twinkle {
+    0% {
+        opacity: 0.7;
+        transform: scale(1);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* 圣诞树文字样式 */
+.christmas-tree-text {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    cursor: pointer;
+    animation: twinkle 1.5s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.christmas-tree-text:hover {
+    transform: scale(1.1);
+    color: #ff8e8e;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* 响应式圣诞树 */
+@media (max-width: 768px) {
+    .christmas-tree {
+        width: 250px;
+        height: 350px;
+    }
+    
+    .tree-top {
+        width: 100px;
+        height: 100px;
+        bottom: 180px;
+    }
+    
+    .tree-middle {
+        width: 170px;
+        height: 130px;
+        bottom: 80px;
+    }
+    
+    .tree-bottom {
+        width: 240px;
+        height: 160px;
+    }
+    
+    .tree-trunk {
+        width: 40px;
+        height: 70px;
+        bottom: -25px;
+    }
+    
+    .tree-star {
+        width: 50px;
+        height: 50px;
+        top: -50px;
+    }
+    
+    .ornament {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .ornament-1 { top: 40px; left: 100px; }
+    .ornament-2 { top: 60px; left: 170px; }
+    .ornament-3 { top: 100px; left: 80px; }
+    .ornament-4 { top: 120px; left: 190px; }
+    .ornament-5 { top: 160px; left: 120px; }
+    .ornament-6 { top: 180px; left: 170px; }
+    .ornament-7 { top: 220px; left: 100px; }
+    .ornament-8 { top: 240px; left: 190px; }
+    .ornament-9 { top: 280px; left: 140px; }
+}
+
+@media (max-width: 480px) {
+    .christmas-tree {
+        width: 200px;
+        height: 300px;
+    }
+    
+    .tree-top {
+        width: 80px;
+        height: 80px;
+        bottom: 150px;
+    }
+    
+    .tree-middle {
+        width: 140px;
+        height: 110px;
+        bottom: 60px;
+    }
+    
+    .tree-bottom {
+        width: 200px;
+        height: 140px;
+    }
+    
+    .tree-trunk {
+        width: 35px;
+        height: 60px;
+        bottom: -20px;
+    }
+    
+    .tree-star {
+        width: 40px;
+        height: 40px;
+        top: -40px;
+    }
+    
+    .ornament {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .ornament-1 { top: 30px; left: 80px; }
+    .ornament-2 { top: 50px; left: 140px; }
+    .ornament-3 { top: 80px; left: 60px; }
+    .ornament-4 { top: 100px; left: 150px; }
+    .ornament-5 { top: 140px; left: 90px; }
+    .ornament-6 { top: 150px; left: 130px; }
+    .ornament-7 { top: 190px; left: 70px; }
+    .ornament-8 { top: 200px; left: 140px; }
+    .ornament-9 { top: 240px; left: 100px; }
 }
