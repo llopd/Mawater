@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的小礼物</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 开场动画区域 -->
+    <div class="intro" id="intro">
+        <div class="star-container">
+            <div class="star"></div>
+            <div class="star-text">你好，水总</div>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content" id="mainContent">
+        <!-- 头部区域 -->
+        <header class="header">
+            <h1 class="title">特别的礼物</h1>
+
+        </header>
+
+        <!-- 文字信息区域 -->
+        <section class="message-section">
+            <div class="message-card">
+                <h2 class="message-title">给你的一封信</h2>
+                <div class="message-content">
+                    <p class="message-text">你好，水总：</p>
+                    <p class="message-text">这是我为你准备的特别礼物，</p>
+                    <p class="message-text">希望它能带给你温暖和快乐。</p>
+                    <p class="message-text">每一张照片都记录着我们的美好时光，</p>
+                    <p class="message-text">每一句话都承载着我的心意。</p>
+                    <p class="message-text">愿我们的友谊永远深厚，</p>
+                    <p class="message-text">愿你的每一天都充满阳光和笑容。</p>
+                    <p class="message-text">你的好朋友</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 互动效果区域 -->
+        <section class="interactive-section">
+            <div class="interactive-card">
+                <h2 class="interactive-title">🎄 点我</h2>
+                <div class="surprise-box" id="surpriseBox">
+                    <div class="surprise-content">
+                        <div class="confetti"></div>
+                        <h3>🎊 友谊长存！</h3>
+                        <p>愿你永远幸福快乐！</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 结尾区域 -->
+        <footer class="footer">
+
+            <p class="footer-date" id="currentDate"></p>
+        </footer>
+    </div>
+
+    <!-- 聊天机器人区域 -->
+    <section class="chatbot-section">
+        <div class="chatbot-container">
+            <div class="chatbot-header">
+                <h2 class="chatbot-title">白开水</h2>
+                <span class="chatbot-status">在线</span>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">
+                    <div class="message-content">你好，水总！我是白开水，很高兴和你聊天！</div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="输入消息...">
+                <button class="chatbot-send-btn" id="chatbotSendBtn">发送</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 引入轻量级NLP库 compromise.js -->
+    <script src="https://unpkg.com/compromise@14.11.1/builds/compromise.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
